@@ -1,8 +1,9 @@
-
 const HomeScreen = () => {
   return (
-    <div>HomeScreen</div>
-  )
-}
+    <div className="" >
+      HOme screen
+    </div>
+  );
+};
 
-export default HomeScreen
+export default HomeScreen;
