@@ -1,50 +1,71 @@
-# React + TypeScript + Vite
+# Resume Builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack resume builder application that allows users to create, manage, and export resumes. This project uses **Clerk** for user authentication, **Strapi** as the backend for content management, and **React** with **TypeScript** for the frontend.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **User Authentication**: Secure sign-in and sign-up using Clerk.
+- **Resume Management**: Users can create, edit, and delete resumes.
+- **Dynamic Forms**: Sections for personal info, work experience, education, skills, etc.
+- **Export Options**: Export resumes in PDF format.
+- **Backend Management**: Manage data through Strapi's CMS.
+- **Type Safety**: Built with TypeScript for improved code reliability.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## Tech Stack
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Frontend**: React, TypeScript, Tailwind CSS (optional for styling)
+- **Backend**: Strapi (Node.js-based CMS)
+- **Authentication**: Clerk
+- **Deployment**: Netlify/Vercel (frontend), Heroku/Render (backend)
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Getting Started
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### Prerequisites
+
+- **Node.js** (v14+)
+- **Yarn** or **npm**
+- **Strapi** (for backend CMS setup)
+- **Clerk** account for authentication setup
+
+### Installation
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/yourusername/resume-builder.git
+   cd resume-builder
+  ```
+2. **to run the backend**
+   ```bash
+  cd strapibackend
+  
+    # Server
+    HOST=0.0.0.0
+    PORT=1337
+
+    # Secrets
+    APP_KEYS=KEY
+    API_TOKEN_SALT=TOKEN
+    ADMIN_JWT_SECRET=JWT_SECRET
+    TRANSFER_TOKEN_SALT=TOKEN
+    # Database
+    DATABASE_CLIENT=sqlite
+    DATABASE_HOST=
+    DATABASE_PORT=
+    DATABASE_NAME=
+    DATABASE_USERNAME=
+    DATABASE_PASSWORD=
+    DATABASE_SSL=false
+    DATABASE_FILENAME=.tmp/data.db
+    JWT_SECRET=v1YwRAmOwqm4JfnqiPz5CQ==
+
+    #run the server
+    npm run develop
+
+  ```
