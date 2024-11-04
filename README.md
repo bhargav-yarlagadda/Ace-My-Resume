@@ -65,7 +65,9 @@ A full-stack resume builder application that allows users to create, manage, and
     DATABASE_SSL=false
     DATABASE_FILENAME=.tmp/data.db
     JWT_SECRET=v1YwRAmOwqm4JfnqiPz5CQ==
-
+```
+```bash
+   cd strapibackend
     #run the server
     npm run develop
 
