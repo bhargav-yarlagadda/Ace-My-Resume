@@ -44,7 +44,8 @@ A full-stack resume builder application that allows users to create, manage, and
 2. **to run the backend**
    ```bash
   cd strapibackend
-  
+  #create .env
+    
     # Server
     HOST=0.0.0.0
     PORT=1337
