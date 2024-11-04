@@ -17,7 +17,7 @@ const UserSignIn = () => {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white bg-opacity-90">
+    <div className="flex items-center justify-center py-8 bg-gray-900 text-white bg-opacity-90">
       <div className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-lg flex flex-col items-center">
         <h2 className="text-2xl font-semibold mb-4 text-center">Sign In</h2>
         <SignIn />

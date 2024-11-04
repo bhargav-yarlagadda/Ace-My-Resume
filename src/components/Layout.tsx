@@ -7,7 +7,8 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className="w-screen bg-black/90  min-h-screen" >
+    <div className="max-w-screen bg-black/90  min-
+    h-screen" >
     <Header/>
       {children}
     </div>

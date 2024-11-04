@@ -2,7 +2,7 @@ import { UserButton, useUser } from "@clerk/clerk-react";
 import { PiSignIn } from "react-icons/pi";
 import Logo from '../../public/favicon.png';
 import { useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 const NotLoggedIn = () => {
   const navigate = useNavigate();
 
@@ -30,11 +30,12 @@ const Header = () => {
           alt="ACE My Resume Logo"
         />
         <span className="text-xl font-semibold tracking-wide text-blue-400 transition-opacity duration-500 opacity-0 animate-slide-in">
-          ACE My Resume
+          Ace My Resume
         </span>
       </div>
       {isSignedIn ? (
         <div className="flex items-center gap-8">
+          <Link to='/' className="px-6 py-2 rounded-full hover:scale-105 transition-all ease-out duration-150 hover:bg-blue-600 bg-violet-600 " >Home</Link>
           <button
             className="bg-violet-600 text-white hover:bg-violet-700 px-4 py-2 rounded-full shadow-md transition-all ease-in-out duration-300 transform hover:scale-105"
             onClick={() => navigate('/dashboard')}
