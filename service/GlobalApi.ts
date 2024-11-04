@@ -26,5 +26,23 @@ const createNewResume = (data: ResumeData): Promise<AxiosResponse<any>> => {
     return axiosClient.post('/user-resumes', payload);
 };
 
+const getAllResumeIds = async (): Promise<{ resumeId: string; title: string }[]> => {
+    try {
+        const response: AxiosResponse<{ data: { resumeId: string; title: string }[] }> = await axiosClient.get('/user-resumes');
+
+        // Map through the response data to extract resumeId and title from each resume
+        const resumes = response.data.data.map((resume) => ({
+            resumeId: resume.resumeId,
+            title: resume.title
+        }));
+
+        return resumes;
+    } catch (error) {
+        console.error("Error fetching resume IDs:", error);
+        return []; // Return an empty array if there's an error
+    }
+};
+
+
 // Export the function directly
-export { createNewResume };
+export { createNewResume ,getAllResumeIds};
