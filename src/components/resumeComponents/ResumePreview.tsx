@@ -1,6 +1,15 @@
+import EducationPreview from "./EducationPreview"
+import PersonalDetailsPreview from "./previewComponents/PersonalDetailsPreview"
+import ProfessionalExperiencePreview from "./ProfessionalExperiencePreview"
+import SkillsPreview from "./previewComponents/SkillsPreview"
 const ResumePreview = () => {
   return (
-    <div>ResumePreview</div>
+    <div className="bg-white p-3 overflow-y-scroll" style={{scrollbarWidth:'none'}}  >
+      <PersonalDetailsPreview/>
+      <ProfessionalExperiencePreview/>
+      <EducationPreview/>
+      <SkillsPreview/>
+    </div>
   )
 }
 

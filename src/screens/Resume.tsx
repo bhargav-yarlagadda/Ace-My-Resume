@@ -15,7 +15,7 @@ export default function Resume() {
   const [resumeInfo, setResumeInfo] = useState<ResumeInfoType>(Dummy);
 
   useEffect(() => {
-    setResumeInfo(Dummy);
+    setResumeInfo(Dummy); // In real case, fetch or update resume data here
   }, []);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export default function Resume() {
 
   return (
     <ResumeInfoContext.Provider value={{ resumeInfo, setResumeInfo }}>
-      <div className="grid grid-cols-1 md:grid-cols-2 p-5 gap-5">
+      <div className="grid grid-cols-1 h-screen md:grid-cols-2  gap-5">
         <ResumeForm />
         <ResumePreview />
       </div>
