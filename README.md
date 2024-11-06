@@ -21,8 +21,6 @@ A full-stack resume builder application that allows users to create, manage, and
 - **Frontend**: React, TypeScript, Tailwind CSS (optional for styling)
 - **Backend**: Strapi (Node.js-based CMS)
 - **Authentication**: Clerk (for user authentication)
-- **Deployment**: Netlify/Vercel (Frontend), Heroku/Render (Backend)
-
 ---
 
 ## Getting Started
