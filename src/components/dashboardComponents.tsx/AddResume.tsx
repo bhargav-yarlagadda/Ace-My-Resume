@@ -41,7 +41,7 @@ const CreateResumeModal: React.FC<CreateResumeModalProps> = ({ callback, getResu
       callback(false);
       setResumeTitle('');
       setLoading(false); // Ensure loading state is reset
-      navigate('/dashboard');
+      navigate(`/dashboard/resume/${Id}/edit`);
       getResumes();
     }
   };
