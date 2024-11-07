@@ -1,4 +1,5 @@
 import { createContext } from "react";
+import { Dispatch, SetStateAction } from "react";
 
 // Define the types for ResumeInfo
 interface Experience {
@@ -44,9 +45,17 @@ interface ResumeInfoType {
 }
 
 // Define context type
-interface ResumeInfoContextType {
+export interface ResumeInfoContextType {
   resumeInfo: ResumeInfoType;
-  setResumeInfo: React.Dispatch<React.SetStateAction<ResumeInfoType>>;
+  setResumeInfo: Dispatch<SetStateAction<ResumeInfoType>>;
+  hasPersonalDetails: boolean;
+  setHasPersonalDetails: Dispatch<SetStateAction<boolean>>;
+  hasExperience: boolean;
+  setHasExperience: Dispatch<SetStateAction<boolean>>;
+  hasEducation: boolean;
+  setHasEducation: Dispatch<SetStateAction<boolean>>;
+  hasSkills: boolean;
+  setHasSkills: Dispatch<SetStateAction<boolean>>;
 }
 
 // Initialize context with the default value

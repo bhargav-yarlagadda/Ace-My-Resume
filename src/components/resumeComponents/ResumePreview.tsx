@@ -1,6 +1,6 @@
-import EducationPreview from "./EducationPreview"
+import EducationPreview from "./previewComponents/EducationPreview"
 import PersonalDetailsPreview from "./previewComponents/PersonalDetailsPreview"
-import ProfessionalExperiencePreview from "./ProfessionalExperiencePreview"
+import ProfessionalExperiencePreview from "./previewComponents/ProfessionalExperiencePreview"
 import SkillsPreview from "./previewComponents/SkillsPreview"
 const ResumePreview = () => {
   return (

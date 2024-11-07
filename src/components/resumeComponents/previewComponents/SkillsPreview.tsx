@@ -25,18 +25,24 @@ const SkillsPreview = () => {
     return <div>Loading...</div>; // Handle the null case here
   }
 
-  const { resumeInfo } = context;
+  const { resumeInfo,hasSkills } = context;
 
   return (
-    <div className="max-w-4xl mx-auto bg-white p-3">
-      <h2 className="text-xl font-semibold text-center text-gray-800 mb-6">Skills</h2>
-
-      {/* Grid layout for skills */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {resumeInfo.skills?.map((skill) => (
-          <Skill key={skill.id} name={skill.name} rating={skill.rating} />
-        ))}
-      </div>
+    <div>
+      {
+        hasSkills && (
+          <div className="max-w-4xl mx-auto bg-white p-3">
+          <h2 className="text-xl font-semibold text-center text-gray-800 mb-6">Skills</h2>
+    
+          {/* Grid layout for skills */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {resumeInfo.skills?.map((skill) => (
+              <Skill key={skill.id} name={skill.name} rating={skill.rating} />
+            ))}
+          </div>
+        </div>
+        )
+      }
     </div>
   );
 };

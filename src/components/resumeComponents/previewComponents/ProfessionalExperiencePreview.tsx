@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ResumeInfoContext } from "../../../context/ResumeContext";
+import { ResumeInfoContext } from "../../../../context/ResumeContext";
 
 // Experience Component to display individual experience details
 const Experience = ({
@@ -37,29 +37,33 @@ const ProfessionalExperiencePreview = () => {
     return <div>Loading...</div>; // Handle the null case here
   }
 
-  const { resumeInfo } = context;
+  const { resumeInfo,hasExperience } = context;
 
   return (
-    <div className="max-w-4xl mx-auto bg-white p-2">
-      <h2 className="text-xl font-semibold text-center text-gray-800">Professional Experience</h2>
-
-      {/* Iterate over the experience array and render each Experience */}
-      <div>
-        {resumeInfo.experience?.map((item) => (
-          <Experience
-            key={item.id}
-            title={item.title}
-            companyName={item.companyName}
-            city={item.city}
-            state={item.state}
-            startDate={item.startDate}
-            endDate={item.endDate}
-            currentlyWorking={item.currentlyWorking}
-            workSummery={item.workSummery}
-          />
-        ))}
-      </div>
-    </div>
+ <div>
+    {hasExperience && (
+         <div className="max-w-4xl mx-auto bg-white p-2">
+         <h2 className="text-xl font-semibold text-center text-gray-800">Professional Experience</h2>
+   
+         {/* Iterate over the experience array and render each Experience */}
+         <div>
+           {resumeInfo.experience?.map((item) => (
+             <Experience
+               key={item.id}
+               title={item.title}
+               companyName={item.companyName}
+               city={item.city}
+               state={item.state}
+               startDate={item.startDate}
+               endDate={item.endDate}
+               currentlyWorking={item.currentlyWorking}
+               workSummery={item.workSummery}
+             />
+           ))}
+         </div>
+       </div>
+    )}
+ </div>
   );
 };
 
