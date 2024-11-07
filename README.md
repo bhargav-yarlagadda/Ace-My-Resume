@@ -1,4 +1,4 @@
-# Resume Builder
+# Ace My Resume
 
 A full-stack resume builder application that allows users to create, manage, and export resumes. This project uses **Clerk** for user authentication, **Strapi** as the backend for content management, and **React** with **TypeScript** for the frontend.
 
