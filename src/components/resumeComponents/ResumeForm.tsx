@@ -9,7 +9,6 @@ const ResumeForm = () => {
       <ExperienceForm/>
       <EducationForm/>
       <SkillForm/>
-
     </div>
   )
 }

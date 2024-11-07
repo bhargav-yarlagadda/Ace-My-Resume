@@ -21,6 +21,8 @@ interface ResumeContextType {
   setHasEducation: Dispatch<SetStateAction<boolean>>;
   hasSkills: boolean;
   setHasSkills: Dispatch<SetStateAction<boolean>>;
+  formSection:Number;
+  setFormSection:Dispatch<SetStateAction<number>>;
 }
 
 export default function Resume() {
@@ -31,7 +33,7 @@ export default function Resume() {
   const [hasExperience, setHasExperience] = useState<boolean>(true);
   const [hasEducation, setHasEducation] = useState<boolean>(true);
   const [hasSkills, setHasSkills] = useState<boolean>(true);
-
+  const [formSection,setFormSection] = useState<number>(0)
   useEffect(() => {
     setResumeInfo(Dummy); // In real case, fetch or update resume data here
   }, []);
@@ -56,7 +58,9 @@ export default function Resume() {
       hasEducation,
       setHasEducation,
       hasSkills,
-      setHasSkills
+      setHasSkills,
+      formSection,
+      setFormSection
     } as ResumeContextType}>
       <div className="grid grid-cols-1 h-screen md:grid-cols-2 gap-3">
         <ResumeForm />

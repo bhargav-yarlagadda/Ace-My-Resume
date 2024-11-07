@@ -56,6 +56,8 @@ export interface ResumeInfoContextType {
   setHasEducation: Dispatch<SetStateAction<boolean>>;
   hasSkills: boolean;
   setHasSkills: Dispatch<SetStateAction<boolean>>;
+  formSection:Number;
+  setFormSection:Dispatch<SetStateAction<number>>;
 }
 
 // Initialize context with the default value

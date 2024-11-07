@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ResumeInfoContext } from "../../../../context/ResumeContext";
+import { FaArrowRight } from "react-icons/fa";
 
 interface InputProps {
   label: string;
@@ -40,7 +41,7 @@ const PersonalDetailForm = () => {
     return <div>Loading...</div>;
   }
 
-  const { resumeInfo, setResumeInfo, hasPersonalDetails, setHasPersonalDetails } = context;
+  const { resumeInfo, setResumeInfo, hasPersonalDetails, setHasPersonalDetails,formSection,setFormSection } = context;
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -61,39 +62,51 @@ const PersonalDetailForm = () => {
   ];
 
   return (
-    <form className="space-y-2 bg-white px-6 h-full border-2 border-gray-200  mx-auto">
-        <div className="flex text-[14px] mt-3 gap-4 justify-center">
-        <button
-          type="submit"
-          className="w-full md:w-auto bg-indigo-600 text-white py-2 px-4 rounded-lg shadow hover:bg-indigo-700 transition duration-200"
-        >
-          Save Details
-        </button>
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-            setHasPersonalDetails(!hasPersonalDetails);
-          }}
-          className={` ${hasPersonalDetails ? 'bg-red-600' : 'bg-blue-600'} w-full md:w-auto text-white py-2 px-4 rounded-lg shadow transition duration-200`}
-        >
-          {hasPersonalDetails ? "Remove Section" : "Keep This Section"}
-        </button>
-      </div>
-      <h2 className="text-2xl font-semibold text-gray-800 text-center mb-6">Personal Details</h2>
-      {fields.map((field) => (
-        <Input
-          key={field.name}
-          label={field.label}
-          type={field.type}
-          name={field.name}
-          value={typeof resumeInfo[field.name as keyof typeof resumeInfo] === "string" 
-                    ? (resumeInfo[field.name as keyof typeof resumeInfo] as string) 
-                    : ""}
-          onChange={handleInputChange}
-        />
-      ))}
+      <div>
+        {
+          formSection == 0 && (
+            <form className="space-y-3 bg-gray-200 px-6 h-screen border-2 border-gray-200  mx-auto">
+            <div className="flex text-[14px] mt-3 gap-4 justify-center">
+            <button
+              type="submit"
+              className="w-full md:w-auto bg-indigo-600 text-white py-2 px-4 rounded-lg shadow hover:bg-indigo-700 transition duration-200"
+            >
+              Save Details
+            </button>
 
-    </form>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                setHasPersonalDetails(!hasPersonalDetails);
+              }}
+              className={` ${hasPersonalDetails ? 'bg-red-600' : 'bg-blue-600'} w-full md:w-auto text-white py-2 px-4 rounded-lg shadow transition duration-200`}
+            >
+              {hasPersonalDetails ? "Remove Section" : "Keep This Section"}
+            </button>
+            <button 
+            onClick={()=>{
+              setFormSection(prev => (prev+1))
+            }}
+            className="flex items-center justify-center gap-2 hover:bg-blue-700 rounded-md bg-blue-500 py-2 px-4 text-white" > Next <FaArrowRight className="my-auto" /></button>
+          </div>
+          <h2 className="text-2xl font-semibold text-gray-800 text-center mb-6">Personal Details</h2>
+          {fields.map((field) => (
+            <Input
+              key={field.name}
+              label={field.label}
+              type={field.type}
+              name={field.name}
+              value={typeof resumeInfo[field.name as keyof typeof resumeInfo] === "string" 
+                        ? (resumeInfo[field.name as keyof typeof resumeInfo] as string) 
+                        : ""}
+              onChange={handleInputChange}
+            />
+          ))}
+    
+        </form>
+          )
+        }
+      </div>
   );
 };
 

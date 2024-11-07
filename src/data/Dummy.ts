@@ -63,24 +63,24 @@ export default{
     ],
     skills:[
         {
-            id:1,
-            name:'Angular',
-            rating:80,
-        },
-        {
-            id:1,
-            name:'React',
-            rating:100,
-        },
-        {
-            id:1,
-            name:'MySql',
-            rating:80,
-        },
-        {
-            id:1,
-            name:'React Native',
-            rating:100,
-        }
+            id: 1,
+            name: "Angular",
+            rating: 80,
+          },
+          {
+            id: 2,
+            name: "React",
+            rating: 100,
+          },
+          {
+            id: 3,
+            name: "MySQL",
+            rating: 80,
+          },
+          {
+            id: 4,
+            name: "React Native",
+            rating: 100,
+          },
     ]
 }
